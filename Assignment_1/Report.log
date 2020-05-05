@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.4.13)  19 APR 2020 13:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.4.29)  5 MAY 2020 13:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1295,17 +1295,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (69.42249pt too wide) in paragraph at lines 86--86
- [][] 
- []
-
-(./scope.tex
+) (./scope.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<clientsNetwork.png, id=43, 188.705pt x 242.9075pt>
+<clientsNetwork.png, id=59, 188.705pt x 242.9075pt>
 File: clientsNetwork.png Graphic file (type png)
 <use clientsNetwork.png>
 Package pdftex.def Info: clientsNetwork.png  used on input line 12.
@@ -1323,74 +1318,175 @@ LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 7
 (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<dhcp_clients.png, id=59, 544.0325pt x 332.24126pt>
+<dhcp_clients.png, id=75, 544.0325pt x 332.24126pt>
 File: dhcp_clients.png Graphic file (type png)
 <use dhcp_clients.png>
 Package pdftex.def Info: dhcp_clients.png  used on input line 15.
 (pdftex.def)             Requested size: 213.19627pt x 130.2022pt.
-<dhcp_range.png, id=60, 707.64375pt x 179.67125pt>
+<dhcp_range.png, id=76, 707.64375pt x 179.67125pt>
 File: dhcp_range.png Graphic file (type png)
 <use dhcp_range.png>
 Package pdftex.def Info: dhcp_range.png  used on input line 21.
 (pdftex.def)             Requested size: 298.47348pt x 75.78217pt.
-<dhcp_mac_rules.png, id=61, 723.70375pt x 160.6pt>
+<dhcp_mac_rules.png, id=77, 723.70375pt x 160.6pt>
 File: dhcp_mac_rules.png Graphic file (type png)
 <use dhcp_mac_rules.png>
 Package pdftex.def Info: dhcp_mac_rules.png  used on input line 27.
 (pdftex.def)             Requested size: 298.47348pt x 66.23605pt.
-<dhcp_static_mappings.png, id=62, 713.66624pt x 300.12125pt>
+<dhcp_static_mappings.png, id=78, 713.66624pt x 300.12125pt>
 File: dhcp_static_mappings.png Graphic file (type png)
 <use dhcp_static_mappings.png>
 Package pdftex.def Info: dhcp_static_mappings.png  used on input line 33.
 (pdftex.def)             Requested size: 298.47348pt x 125.51884pt.
  [3] [4 <./dhcp_clients.png> <./dhcp_range.png> <./dhcp_mac_rules.png> <./dhcp_
 static_mappings.png>]
-<dhcp_kali_macOk.png, id=76, 534.99875pt x 354.32375pt>
+<dhcp_kali_macOk.png, id=92, 534.99875pt x 354.32375pt>
 File: dhcp_kali_macOk.png Graphic file (type png)
 <use dhcp_kali_macOk.png>
 Package pdftex.def Info: dhcp_kali_macOk.png  used on input line 43.
 (pdftex.def)             Requested size: 298.47348pt x 197.68465pt.
-<dhcp_kali_macNotOk.png, id=77, 524.96124pt x 421.575pt>
+<dhcp_kali_macNotOk.png, id=93, 524.96124pt x 421.575pt>
 File: dhcp_kali_macNotOk.png Graphic file (type png)
 <use dhcp_kali_macNotOk.png>
 Package pdftex.def Info: dhcp_kali_macNotOk.png  used on input line 49.
 (pdftex.def)             Requested size: 298.47348pt x 239.702pt.
-<dhcp_kali_macNotOk2.png, id=78, 509.905pt x 400.49625pt>
+<dhcp_kali_macNotOk2.png, id=94, 509.905pt x 400.49625pt>
 File: dhcp_kali_macNotOk2.png Graphic file (type png)
 <use dhcp_kali_macNotOk2.png>
 Package pdftex.def Info: dhcp_kali_macNotOk2.png  used on input line 55.
 (pdftex.def)             Requested size: 298.47348pt x 234.43909pt.
 ) [5 <./dhcp_kali_macOk.png>] [6 <./dhcp_kali_macNotOk.png> <./dhcp_kali_macNot
 Ok2.png>]
-(./arpwatch.tex) [7] (./othertools.tex) [8] (./test.tex) [9] (./remarks.tex)
-[10] [11]
+(./arpwatch.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+
+Overfull \hbox (4.7283pt too wide) in paragraph at lines 7--12
+\OT1/cmr/bx/n/10.95 Arpwatch \OT1/cmr/m/n/10.95 usu-ally logs any cap-tured eve
+nt in a Unix pre-de-fined log file un-der \OT1/cmr/m/it/10.95 /var/log/mes-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
+
+./arpwatch.tex:14: Missing { inserted.
+<to be read again> 
+                   $
+l.14 ... first one, \textit{start$_$monitoring.sh}
+                                                   is located under \textit{...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./arpwatch.tex:14: Missing } inserted.
+<inserted text> 
+                }
+l.14 ... first one, \textit{start$_$monitoring.sh}
+                                                   is located under \textit{...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./arpwatch.tex:14: Missing { inserted.
+<to be read again> 
+                   $
+l.14 ...at \textit{/home/bash$_$shell$_$script.sh}
+                                                  . This script is actually ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./arpwatch.tex:14: Missing } inserted.
+<inserted text> 
+                }
+l.14 ...at \textit{/home/bash$_$shell$_$script.sh}
+                                                  . This script is actually ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./arpwatch.tex:14: Missing { inserted.
+<to be read again> 
+                   $
+l.14 ...at \textit{/home/bash$_$shell$_$script.sh}
+                                                  . This script is actually ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./arpwatch.tex:14: Missing } inserted.
+<inserted text> 
+                }
+l.14 ...at \textit{/home/bash$_$shell$_$script.sh}
+                                                  . This script is actually ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (19.27959pt too wide) in paragraph at lines 14--16
+\OT1/cmr/m/n/10.95 Three scripts were writ-ten to ac-tu-ally mon-i-tor our tar-
+get LAN: the first one, \OT1/cmr/m/it/10.95 start$[]$monitoring.sh
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+
+ []
+
+[7]) [8] (./othertools.tex
+Overfull \hbox (3.4859pt too wide) in paragraph at lines 7--14
+\OT1/cmr/m/n/10.95 Also, the file \OT1/cmr/bx/n/10.95 arp.dat \OT1/cmr/m/n/10.9
+5 where the tool stores the arp en-tries is usu-ally lo-cated at \OT1/cmr/m/it/
+10.95 /var/lib/arp-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--14
+
+ []
+
+[9]) [10] (./test.tex) [11] (./remarks.tex) [12] [13]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (./Report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 40046C112D89357231BF4D6DC6D43ED8;539.
+(rerunfilecheck)             Checksum: 656FE7824C491521C78E4D7479EDF84A;858.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 33204 strings out of 492167
- 605692 string characters out of 6131558
- 683898 words of memory out of 5000000
- 37079 multiletter control sequences out of 15000+600000
- 540301 words of font info for 54 fonts, out of 8000000 for 9000
+ 33221 strings out of 492167
+ 605934 string characters out of 6131558
+ 685904 words of memory out of 5000000
+ 37089 multiletter control sequences out of 15000+600000
+ 541717 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,67p,932b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,6n,67p,1237b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
 /share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Report.pdf (11 pages, 391234 bytes).
+Output written on Report.pdf (13 pages, 406237 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

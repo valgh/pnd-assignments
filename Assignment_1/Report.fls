@@ -353,6 +353,12 @@ INPUT ./dhcp_kali_macNotOk2.png
 INPUT ./dhcp_kali_macNotOk2.png
 INPUT arpwatch.tex
 INPUT arpwatch.tex
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT othertools.tex
 INPUT othertools.tex
 INPUT test.tex
