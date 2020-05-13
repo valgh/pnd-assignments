@@ -1,1 +1,24 @@
 \section{Policy Evaluation}
+The proposed policy targets the four services listed in the previous paragraph and a series of machines which will either exploit or provide the corresponding services.\\
+The best way of interpreting and understanding this policy is given by its fifth line:\\
+\begin{itemize}
+\item \textit{"Anything that is not specifically allowed has to be denied"};
+\end{itemize}
+
+which suggests the \textit{white-listed} approach we have to adopt when defining the firewall rules: the policy is a list of \textbf{PASS} rules - meaning, rules that when matched will let the packet pass and continue its journey - while everything that doesn't match the rule has to be rejected, i.e. the packet must be dropped. Thus, we can devise a list of rules to apply at each of the two target routers and their corresponding effects on the network.\\
+
+\textbf{Internal Router:}
+\begin{itemize}
+\item \textbf{Clients Interface}: only accept incoming packets with destination ports 80(HTTP), 443(HTTPS), 22(SSH), 53(UDP-DNS). Anything else will be discarder, since clients are not supposed to perform different actions and exploit different protocols than the aforementioned ones. For practical reasons, also packets on port 8443 (for \textbf{zentyal} panel service) are allowed - but this might be changed;
+\item \textbf{Servers Interface}: only accept outgoing packets with destination port 53(UDP-DNS) or 514(UDP-SYSLOG, if coming from \textbf{DMZ subnet}) and on port 22(SSH) if coming from the \textbf{Clients subnet}, otherwise discard. This means that the two servers can only be reached by Clients or DMZ subnetworks, and only for the services that they provide;
+\end{itemize}
+
+\textbf{Main Router:}
+\begin{itemize}
+\item \textbf{Internal Interface:} only accept incoming$/$outgoing packets on ports 80(HTTP), 443(HTTPS), 22(SSH) and 3182(Proxy) between \textbf{Clients subnet} and \textbf{DMZ subnet}, otherwise discard. This means the Client host will only be able to reach the web server or the proxy to actually reach the WAN, and won't be able to do it directly by itself. Furthermore, SSH is eanbled for Client hosts to reach the \textbf{DMZ subnet};
+\item \textbf{DMZ Interface:} we want the proxy server to be able to reach the internet via HTTP$/$HTTPS protocol, so in addition to the rules already specified for the Internal Interface, we also add that this interface has to accept incoming packets specifically from the \textbf{Proxy server} and with \textbf{any} destination address on ports HTTP$/$HTTPS, and the same gose for the \textbf{web server} since we want it to be accessible from the Internet. However, the \textbf{proxy service} itself must be onyl available for client hosts in the \textbf{Clients subnet}, so we should also specify that this interface should accept incoming$/$outgoing packets on port 3182 with destination address in the \textbf{Clients subnet}, and reject every other packet on the same port with different destination;
+\item \textbf{WAN Interface:} accept incoming$/$outgoing packets on port 53 from \textbf{External services subnet} - the external services need to reach external DNS service on the Internet - and TCP connections on ports 80(HTTP) or 443(HTTPS) if they are coming from the \textbf{DMZ}, while all the other incoming$/$outgoing packets should be rejected since all the other services cannot be reached from the external WAN.
+\end{itemize}
+
+If implemented correctly, this policy should allow the Internal services to be exploited and reachable only by the \textbf{Clients or DMZ networks}, and it should also allow the client hosts in the \textbf{Clients} network to either reach the \textbf{web server} or the Internet via the \textbf{Proxy service} to be configured in the next assignment, being these two services in the \textbf{DMZ} the only two exposed to (and thus reachable from) the Internet.\\
+In order to make this work correctly, since it is a \textit{white-listed} approach, we have to be careful in specifying every single service that is enabled in every interface: only considering the source or destination subnet, in fact, would not be enough - e.g., we do not want a \textbf{client} host to be able to connect through \textbf{telnet} on a \textbf{DMZ} host, but if we only specify the subnet and not the white-listed service$/$port, this is what we are going to get.
