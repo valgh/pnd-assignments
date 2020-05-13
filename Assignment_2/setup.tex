@@ -1,1 +1,28 @@
 \section{Infrastructure Setup}
+We identify four main services which require machine-to-machine communication and, thus, are susceptible to the firewall rules that we'll define:\\
+\begin{itemize}
+\item an \textbf{Apache} web server reachable through \textbf{TCP} ports \textbf{80} (HTTP) and \textbf{443} (HTTPS) at \textbf{100.100.6.2};
+\item a \textbf{DNS service} reachable through standard \textbf{UDP} port \textbf{53} at \textbf{100.100.1.2};
+\item a \textbf{syslog server} reachable through standard \textbf{UDP} port \textbf{514} at \textbf{100.100.1.3};
+\item a \textbf{proxy server} reachable through port \textbf{3128} at \textbf{100.100.6.3}, to be configured later on Assignemnt 3.
+\end{itemize}
+
+We thus identify two new subnetworks: the \textbf{Internal Servers} subnetwork \textbf{100.100.1.0$/$24} and the \textbf{DMZ} subnetwork \textbf{100.100.6.0$/$24}, and for the sake of defining the scope of this assignment and the setup of the whole infrastructure, we should also consider two additional details:\\
+\begin{itemize}
+\item Two of the four services - web server and syslog server - are already setup and running in the system: they do not need to be configured or launched;
+\item the \textbf{proxy server} is to be configured on the next assignment: for now, knowing from the \textbf{zentyal} portal that it is provided on port 3128 is enough.
+\end{itemize}
+
+This leaves us with the only \textbf{DNS service} to be configured at the moment. This step has been performed by following the instructions provided with the assignment: by accessing the \textbf{zentyal} portal at \textbf{100.100.1.2} on port \textbf{8843} - credentials have been changed - we added as forwarders the suggested IP addresses and specified the domain name - \textbf{acme.group27}. Then, the file located at \textbf{$/$etc$/$zentyal$/$dns.conf} on the aforementioned machine was modified including the target subnetworks (Clients and DMZ, that are the ones which will exploit the service).\\
+At this point, pairs of IP addresses and hostnames were specified in the portal, so that the well-known machines of the network can now be associated with the following names:\\
+\begin{itemize}
+\item \textbf{kali}.acme.group27;
+\item \textbf{watchdog}.acme.group27;
+\item \textbf{dc}.acme.group27;
+\item \textbf{web}.acme.group27;
+\item \textbf{proxy}.acme.group27;
+\end{itemize}
+
+only the machines in the target subnetworks were actually included - so machines in the External subnet did not receive a hostname, and as suggested in the assignment were provided with an external DNS service such as 8.8.8.8 in their DHCPv4 configuration. Please notice also that the \textit{logserver} was not given a name since it is only meant to be accessed by the SPOCK environment or by SSH and is not offering any browser-related service - and the same reasoning could be applied to the first two machines, \textit{kali} and \textit{arpwatch}, which we could exclude from this pairing list.\\
+Last step was to actually modify the \tetxbf{DHCPv4} settings in the two main routers to set the \textbf{dc} machine as the \textbf{DNS server} in the Internal Servers network, after having disabled the \textbf{Service Unbound DNS} in both routers.\\
+The \textbf{DNS service} configuration is tested in section 5.

@@ -2,5 +2,7 @@
 \BOOKMARK [1][-]{section.2}{Infrastructure Setup}{}% 2
 \BOOKMARK [1][-]{section.3}{Policy Evaluation}{}% 3
 \BOOKMARK [1][-]{section.4}{Policy Implementation}{}% 4
-\BOOKMARK [1][-]{section.5}{Testing the policy}{}% 5
-\BOOKMARK [1][-]{section.6}{Final remarks}{}% 6
+\BOOKMARK [1][-]{section.5}{Tests}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Testing the DNS Service}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Testing the policy}{section.5}% 7
+\BOOKMARK [1][-]{section.6}{Final remarks}{}% 8
