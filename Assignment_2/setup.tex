@@ -21,8 +21,9 @@ At this point, pairs of IP addresses and hostnames were specified in the portal,
 \item \textbf{dc}.acme.group27;
 \item \textbf{web}.acme.group27;
 \item \textbf{proxy}.acme.group27;
+\item \textbf{coffee}.acme.group27;
 \end{itemize}
 
-only the machines in the target subnetworks were actually included - so machines in the External subnet did not receive a hostname, and as suggested in the assignment were provided with an external DNS service such as 8.8.8.8 in their DHCPv4 configuration. Please notice also that the \textit{logserver} was not given a name since it is only meant to be accessed by the SPOCK environment or by SSH and is not offering any browser-related service - and the same reasoning could be applied to the first two machines, \textit{kali} and \textit{arpwatch}, which we could exclude from this pairing list.\\
+also, as suggested in the assignment, the external services machines were provided with an external DNS service such as 8.8.8.8 in their DHCPv4 configuration. Please notice also that the \textit{logserver} was not given a name since it is only meant to be accessed by the SPOCK environment or by SSH and is not offering any browser-related service - and the same reasoning could be applied to the first two machines, \textit{kali} and \textit{arpwatch}, which we could exclude from this pairing list.\\
 Last step was to actually modify the \tetxbf{DHCPv4} settings in the two main routers to set the \textbf{dc} machine as the \textbf{DNS server} in the Internal Servers network, after having disabled the \textbf{Service Unbound DNS} in both routers.\\
 The \textbf{DNS service} configuration is tested in section 5.
