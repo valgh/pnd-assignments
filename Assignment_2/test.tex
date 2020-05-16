@@ -3,4 +3,8 @@ We performed some basic tests for the DNS service and the new policy that were e
 To perform thorough tests on the firewall rules we implemented, the WAN interface on the \textbf{Main router} was enabled, through the option provided in OPNSense, to accept private connections, so that it could be reached from external hosts (Internet, or our local machines).\\
 
 \subsection{Testing the DNS Service}
+For the internal DNS service, once defined all the firewall rules, we just tried to solve the domain names through the \textbf{host} command on terminal on the machines exploiting the service, verifying that the names were correctly solved to their corresponding IP addresses - e.g., \textit{coffee.acme.group27}, \textit{dc.acme.group27} or \textit{web.acme.group27} were correctly resolved by any machine in \textbf{DMZ subnet} and \textbf{Clients network} subnet. The same command was then run on machinesd of the \textbf{external clients subnet}, verifying that some external domain names were correctly resolved - e.g., \textit{google.com}.\\
+No errors or misconfiguration problems were faced during this test phase.
+
 \subsection{Testing the policy}
+To test the policy implementation and make sure it behaves the way we wanted it to behave as described in the third paragraph, we had to perform some basic tests by exploiting at least one machine in each of our subnetworks, and also an external one on the \textbf{WAN interface} simulating an external machine connected from the Internet.
