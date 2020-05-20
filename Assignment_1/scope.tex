@@ -13,8 +13,8 @@ The aforementioned \textbf{Clients network} is pictured in \textbf{Figure 1}, an
 \caption[a]{The \textbf{Clients network}, scope of the assignment.}\label{fig:1}
 \end{figure}
 
-The scope of the assignment is to enable the \textbf{DHCP service} on the \textit{Internal Firewall-Router}, in order to provide the clients of the target network with dynamic IPv4 addresses. Furthermore, the clients should be protected against \textbf{link-local attacks} by implementing security measures and tools on the \textbf{Arpwatch} machine with IP address \textbf{100.100.2.254}.
+The goal of the assignment is to enable the \textbf{DHCP service} on the \textit{Internal Firewall-Router}, in order to provide the clients of the target network with dynamic IPv4 addresses. Furthermore, the clients should be protected against \textbf{link-local attacks} by implementing security measures and tools on the \textbf{Arpwatch} machine with IP address \textbf{100.100.2.254}. The scope of the assignment is thus limited to the \textbf{clients} subnetwork and its machines.
 
 \subsection{Goals}
-How do we plan to achieve the goals of this assignment?
-General ideas.
+We plan to achieve the aforementioend goals by exploiting the \textbf{DHCPv4} service provided by the Internal Router, and by monitoring the target subnetwork through the \textbf{arpwatch} tool.\\
+We should also take some extra-measures in order to enforce the security of the machines in the target subnetwork, and in particular of the \textbf{arpwatch-clients} machine, since it is the one which will perform the monitoring task and, thus, we want it to be able to perform it while being resilient to the possible basic attacks it could receive and that could take it down.
