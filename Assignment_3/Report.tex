@@ -1,0 +1,100 @@
+%++++++++++++++++++++++++++++++++++++++++
+% Don't modify this section unless you know what you're doing!
+\documentclass[letterpaper,11pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1.3in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\tikzset{axis line style/.style={thin, gray, -stealth}}
+\newcommand*{\TickSize}{2pt}
+\setcounter{secnumdepth}{3}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{property}{Property}[theorem]
+\newtheorem{lemma}{Lemma}[theorem]
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+\newcommand\given[1][]{\:#1\vert\:}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{diagbox}
+\usepackage{multicol}
+\lstset{
+  basicstyle=\ttfamily,
+  mathescape
+}
+\usepackage{caption}
+\usepackage{hyperref}
+
+\usepackage{fvextra} % loads also fancyvrb
+\usepackage{xpatch}
+
+\DeclareMathVersion{ttmath}
+\DeclareSymbolFont{latinletters}{OT1}{\ttdefault}{m}{n}
+%\SetSymbolFont{latinletters}{ttmath}{OT1}{\ttdefault}{m}{n}
+\SetSymbolFont{letters}{ttmath}{OML}{ccm}{m}{it}
+\SetSymbolFont{symbols}{ttmath}{OMS}{ccsy}{m}{n}
+\SetSymbolFont{largesymbols}{ttmath}{OMX}{ccex}{m}{n}
+
+\newcommand{\changeletters}{%
+  \count255=`A
+  \advance\count255 -1
+  \loop\ifnum\count255<`Z
+    \advance\count255 1
+    \mathcode\count255=\numexpr\number\symlatinletters*256+\count255\relax
+  \repeat
+  \count255=`a
+  \advance\count255 -1
+  \loop\ifnum\count255<`z
+    \advance\count255 1
+    \mathcode\count255=\numexpr\number\symlatinletters*256+\count255\relax
+  \repeat
+  \count255=`0
+  \advance\count255 -1
+  \loop\ifnum\count255<`9
+    \advance\count255 1
+    \mathcode\count255=\numexpr\number\symlatinletters*256+\count255\relax
+  \repeat
+}
+
+\xapptocmd{\ttfamily}{\mathversion{ttmath}\changeletters}{}{}
+%++++++++++++++++++++++++++++++++++++++++
+
+
+\begin{document}
+
+\title{\textbf{Practical Network Defense}\\ \bigskip \large Third Assignment - University ``La Sapienza"}
+\date{2020-13-06}
+\author{\textbf{Group 27}: Nicola Bartoloni ******* - Valerio Trenta 1856471}
+\maketitle
+
+\input{scope.tex}
+\newpage
+\input{vpnsetup.tex}
+\newpage
+\input{proxysetup.tex}
+\newpage
+\input{auth.tex}
+\newpage
+\input{test.tex}
+\newpage
+\input{remarks.tex}
+\newpage
+
+\end{document}
