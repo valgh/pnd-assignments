@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.4.29)  20 MAY 2020 19:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.4.29)  25 MAY 2020 20:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1337,7 +1337,33 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [2] [3] (./evaluation.tex
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+
+./setup.tex:36: LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 \begin{figure}[H]
+                      
+Option `H' ignored and `p' used.
+
+<logserver_dc.png, id=59, 538.01pt x 143.53625pt>
+File: logserver_dc.png Graphic file (type png)
+<use logserver_dc.png>
+Package pdftex.def Info: logserver_dc.png  used on input line 40.
+(pdftex.def)             Requested size: 213.19627pt x 56.87907pt.
+<logserver_dmz.png, id=60, 542.025pt x 278.03876pt>
+File: logserver_dmz.png Graphic file (type png)
+<use logserver_dmz.png>
+Package pdftex.def Info: logserver_dmz.png  used on input line 45.
+(pdftex.def)             Requested size: 213.19627pt x 109.35954pt.
+) [3] (./evaluation.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
@@ -1374,12 +1400,12 @@ l.14 \begin{figure}[H]
                       
 Option `H' ignored and `p' used.
 
-<clientCanConnectToHTTPExt.png, id=71, 552.0625pt x 541.02126pt>
+<clientCanConnectToHTTPExt.png, id=77, 552.0625pt x 541.02126pt>
 File: clientCanConnectToHTTPExt.png Graphic file (type png)
 <use clientCanConnectToHTTPExt.png>
 Package pdftex.def Info: clientCanConnectToHTTPExt.png  used on input line 18.
 (pdftex.def)             Requested size: 213.19627pt x 208.93361pt.
-<clientOtherHTTPDisabled.png, id=72, 662.475pt x 539.01375pt>
+<clientOtherHTTPDisabled.png, id=78, 662.475pt x 539.01375pt>
 File: clientOtherHTTPDisabled.png Graphic file (type png)
 <use clientOtherHTTPDisabled.png>
 Package pdftex.def Info: clientOtherHTTPDisabled.png  used on input line 23.
@@ -1395,12 +1421,12 @@ l.28 \begin{figure}[H]
                       
 Option `H' ignored and `p' used.
 
-<clientCANNOTGoOut.png, id=73, 528.97626pt x 27.10126pt>
+<clientCANNOTGoOut.png, id=79, 528.97626pt x 27.10126pt>
 File: clientCANNOTGoOut.png Graphic file (type png)
 <use clientCANNOTGoOut.png>
 Package pdftex.def Info: clientCANNOTGoOut.png  used on input line 32.
 (pdftex.def)             Requested size: 213.19627pt x 10.92259pt.
-<proxyCanGoOutToHaveFun.png, id=74, 661.47125pt x 186.6975pt>
+<proxyCanGoOutToHaveFun.png, id=80, 661.47125pt x 186.6975pt>
 File: proxyCanGoOutToHaveFun.png Graphic file (type png)
 <use proxyCanGoOutToHaveFun.png>
 Package pdftex.def Info: proxyCanGoOutToHaveFun.png  used on input line 37.
@@ -1416,12 +1442,12 @@ l.42 \begin{figure}[H]
                       
 Option `H' ignored and `p' used.
 
-<dnsWorkingWebServer.png, id=75, 400.49625pt x 164.615pt>
+<dnsWorkingWebServer.png, id=81, 400.49625pt x 164.615pt>
 File: dnsWorkingWebServer.png Graphic file (type png)
 <use dnsWorkingWebServer.png>
 Package pdftex.def Info: dnsWorkingWebServer.png  used on input line 46.
 (pdftex.def)             Requested size: 213.19627pt x 87.62984pt.
-<DMZCanuseDNSService.png, id=76, 695.59875pt x 99.37125pt>
+<DMZCanuseDNSService.png, id=82, 695.59875pt x 99.37125pt>
 File: DMZCanuseDNSService.png Graphic file (type png)
 <use DMZCanuseDNSService.png>
 Package pdftex.def Info: DMZCanuseDNSService.png  used on input line 51.
@@ -1437,12 +1463,12 @@ l.56 \begin{figure}[H]
                       
 Option `H' ignored and `p' used.
 
-<web_reachableHTTP.png, id=77, 1094.0875pt x 421.575pt>
+<web_reachableHTTP.png, id=83, 1094.0875pt x 421.575pt>
 File: web_reachableHTTP.png Graphic file (type png)
 <use web_reachableHTTP.png>
 Package pdftex.def Info: web_reachableHTTP.png  used on input line 60.
 (pdftex.def)             Requested size: 213.19627pt x 82.14568pt.
-<firewallShieldingProxyZentyal.png, id=78, 1143.27126pt x 520.94624pt>
+<firewallShieldingProxyZentyal.png, id=84, 1143.27126pt x 520.94624pt>
 File: firewallShieldingProxyZentyal.png Graphic file (type png)
 <use firewallShieldingProxyZentyal.png>
 Package pdftex.def Info: firewallShieldingProxyZentyal.png  used on input line 
@@ -1459,53 +1485,46 @@ l.70 \begin{figure}[H]
                       
 Option `H' ignored and `p' used.
 
-<WANRefusingUndesiredConnections.png, id=79, 735.74875pt x 627.34375pt>
+<WANRefusingUndesiredConnections.png, id=85, 735.74875pt x 627.34375pt>
 File: WANRefusingUndesiredConnections.png Graphic file (type png)
 <use WANRefusingUndesiredConnections.png>
 Package pdftex.def Info: WANRefusingUndesiredConnections.png  used on input lin
 e 72.
 (pdftex.def)             Requested size: 426.39256pt x 363.57245pt.
-) [7] [8 <./clientCanConnectToHTTPExt.png> <./clientOtherHTTPDisabled.png> <./c
-lientCANNOTGoOut.png> <./proxyCanGoOutToHaveFun.png> <./dnsWorkingWebServer.png
-> <./DMZCanuseDNSService.png>] [9 <./web_reachableHTTP.png> <./firewallShieldin
-gProxyZentyal.png> <./WANRefusingUndesiredConnections.png>] (./remarks.tex)
-[10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+) [7] [8 <./logserver_dc.png> <./logserver_dmz.png> <./clientCanConnectToHTTPEx
+t.png> <./clientOtherHTTPDisabled.png> <./clientCANNOTGoOut.png> <./proxyCanGoO
+utToHaveFun.png>] (./remarks.tex) [9] [10 <./dnsWorkingWebServer.png> <./DMZCan
+useDNSService.png> <./web_reachableHTTP.png> <./firewallShieldingProxyZentyal.p
+ng>] [11 <./WANRefusingUndesiredConnections.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: A934854B9E45FCD6EF97D3C3C8A91B06;457.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
+(rerunfilecheck)             Checksum: 7CE83BCFE0C839C47D9D57C268E9433F;516.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 33213 strings out of 492167
- 606367 string characters out of 6131558
- 684929 words of memory out of 5000000
- 37091 multiletter control sequences out of 15000+600000
+ 33230 strings out of 492167
+ 606683 string characters out of 6131558
+ 685971 words of memory out of 5000000
+ 37105 multiletter control sequences out of 15000+600000
  541717 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,67p,955b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,67p,1042b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Report.pdf (11 pages, 910720 bytes).
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type
+1/public/cm-super/sfrm1095.pfb>
+Output written on Report.pdf (11 pages, 943278 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
-
-st/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Report.pdf (11 pages, 910057 bytes).
-PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 26 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 
