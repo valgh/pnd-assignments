@@ -1,1 +1,10 @@
 \BOOKMARK [1][-]{section.1}{Scope and Initial Considerations}{}% 1
+\BOOKMARK [1][-]{section.2}{VPN Setup}{}% 2
+\BOOKMARK [1][-]{section.3}{Proxy Setup}{}% 3
+\BOOKMARK [1][-]{section.4}{Authentication}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{VPN Authentication}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Proxy Authentication}{section.4}% 6
+\BOOKMARK [1][-]{section.5}{Tests}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Testing the VPN}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Testing the Proxy service}{section.5}% 9
+\BOOKMARK [1][-]{section.6}{Final remarks}{}% 10
