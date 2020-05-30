@@ -20,6 +20,7 @@ To this end, in order to setup a \textbf{VPN} on the \textbf{Main router}, we ex
 \end{minipage}
 \end{figure}
 
+Server has been assigned to a \textbf{Server Certificate} signed by the authority - the server itself - which can be given to the clients to prove the server's identity, so to perform server-to-client authentication.\\
 Also, under \textbf{System $->$ Servers} we setup a new \textit{Acme CO Access Server} which will be exploited to actually access the \textbf{VPN Server}, exploiting an access strategy based on a \textit{Local Database $+$ Timebased One Time Password}, with the  \textbf{OTP} being provided by \textit{Google Authenticator} and thus having length 6. Before actually implementing the \textbf{VPN}, it is also necessary to define the authentication system and how the three users will be able to actually access, but this is discussed in the fourth paragraph.\\
 In order to grant the \textbf{road warriors} to only access through \textbf{SSH} protocol the \textit{internal machines} - i.e., machines on \textit{Internal Servers} and \textit{Clients} subnetworks - the rules at the \textbf{Main firewall} had to be changed as follows:\\
 \begin{itemize}
