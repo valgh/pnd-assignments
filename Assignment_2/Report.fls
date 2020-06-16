@@ -374,6 +374,8 @@ INPUT ./WANRefusingUndesiredConnections.png
 INPUT ./WANRefusingUndesiredConnections.png
 INPUT remarks.tex
 INPUT remarks.tex
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT Report.aux
 INPUT ./Report.out
 INPUT ./Report.out
