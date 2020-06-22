@@ -228,7 +228,7 @@
       <descr>System Administrator</descr>
       <scope>system</scope>
       <groupname>admins</groupname>
-      <password>$2y$10$UqSWyZTOrwUF0dD2FLxEk.cjz9W//17xk9XXLkK9Hvu2q39rHpQdy</password>
+      <password>$2y$10$fBP47NJtu7r6DnG4wv1DHepHwMhxKD9/pi.Sdap7z4pUfT4cw1pJa</password>
       <uid>0</uid>
     </user>
     <nextuid>2000</nextuid>
@@ -907,6 +907,33 @@
       </created>
     </rule>
     <rule>
+      <type>pass</type>
+      <interface>opt1</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>allow proxy connection</descr>
+      <direction>out</direction>
+      <quick>1</quick>
+      <protocol>tcp</protocol>
+      <source>
+        <network>opt1</network>
+      </source>
+      <destination>
+        <address>PROXY</address>
+        <port>3128</port>
+      </destination>
+      <updated>
+        <username>root@100.100.2.102</username>
+        <time>1592830015.6222</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@100.100.2.102</username>
+        <time>1592830015.6222</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+    <rule>
       <type>reject</type>
       <interface>opt1</interface>
       <ipprotocol>inet46</ipprotocol>
@@ -988,7 +1015,7 @@
   </widgets>
   <revision>
     <username>root@100.100.2.102</username>
-    <time>1592556239.1925</time>
+    <time>1592830022.0004</time>
     <description>/firewall_rules.php made changes</description>
   </revision>
   <OPNsense>
