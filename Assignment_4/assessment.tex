@@ -137,3 +137,92 @@ Suggested way to mitigate this is indeed by checking at both firewalls the \text
   \caption[a]{Suggested fix.}\label{fig:11}
 \end{minipage}%
 \end{figure}
+
+\subsubsection{SSL/TLS Missing Secure Cookie Attribute}
+\begin{itemize}
+\item Severity Score: \textbf{Medium};
+\item Affected Machines: DC, Proxy (Zentyal);
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{secureCookiesDCVuln.png}
+  \caption[a]{Cookies could be sent through an unencrypted channel.}\label{fig:12}
+\end{minipage}%
+\end{figure}
+
+\textbf{Zentyal} service in both machines already exploits the \textbf{HTTPS} protocol, so the server is running with \textbf{SSL/TLS}, but the \textit{Secure} flag is not sent for the cookies that may be used to remember an already authenticated user - meaning the cookies could be sent in clear text. This would allow an adversary which sniffs the traffic to read the cookie an authenticated client sends to the server, if the client sends it through an unencrypted channel, and exploit it to \textit{hijack his session} and be authenticated by \textbf{Zentyal} as an user with privileges, potentially leading to a disruption of the services running in the machines.
+
+\subsubsection{Missing httpOnly Cookie Attribute}
+\begin{itemize}
+\item Severity Score: \textbf{Medium};
+\item Affected Machines: DC, Proxy (Zentyal);
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{secureCookiesDCVuln.png}
+  \caption[a]{Cookies can be accessed through JavaScript code.}\label{fig:13}
+\end{minipage}%
+\end{figure}
+
+This vulnerability is similar to the previous one, except it describes the cookies set by \textbf{Zentyal} to be missing the \textbf{httpOnly} attribute. This flag in a cookie prevents it from being accessed by scripts at client side - e.g. a JavaScript script accessing the cookie through the DOM of the web page. Just like the previous vulnerability, this might lead to \textit{session hijacking} as a result of \textit{XSS attacks}.
+
+\subsubsection{SSL/TLS Certificate Signed Using A Weak Signature Algorithm}
+\begin{itemize}
+\item Severity Score: \textbf{Medium};
+\item Affected Machines: DC, Proxy (Zentyal);
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{weakSHA1CertificateDCVuln.png}
+  \caption[a]{Certificate is signed with a weak algorithm - SHA1.}\label{fig:14}
+\end{minipage}%
+\end{figure}
+
+The certificate provided for SSL/TLS sessions by both the machines is signed through \textbf{SHA-1 algorithm}, which is publicly known to be, nowadays, \textbf{not secure}, due to the fact that in 2017 the \textbf{Google Security Team} announced to have broken the algorithm by finding a collision. This means the certificate can be forged, it is possible to impersonate both machines and a \textit{MITM} attack is technically feasible on them. To mitigate this threat, it is recommended to generate a new certificate, one for each machine, signed with a different algorithm, e.g. \textbf{SHA-250} or \textbf{SHA-3}.
+
+\subsubsection{Low priority vulnerabilities}
+
+\textbf{1. SSL/TLS: Untrusted Certificate Authoritie}
+\begin{itemize}
+\item Severity Score: \textbf{Medium};
+\item Affected Machines: GSM;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{certificateUntrustedAuthorityTLSGSM.png}
+  \caption[a]{GSM - untrusted CA.}\label{fig:14}
+\end{minipage}%
+\end{figure}
+This is probably a minor, false alarm: the CA signing the certificate for the \textit{GSM} machine is \textbf{Greenbone} itself, which is not a public CA. This way, when \textbf{openVAS} checks among the public CA, the signer can't be found - but it definitely can be trusted.\\
+
+\textbf{2. TCP timestamps}
+\begin{itemize}
+\item Severity Score: \textbf{Low};
+\item Affected Machines: all;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{tcpTimestampsVuln.png}
+  \caption[a]{TCP Timestamps vulnerability in DC machine.}\label{fig:14}
+\end{minipage}%
+\end{figure}
+\textbf{TCP timestamps} allow to compute the uptime of each host in the network. This provides extra information to an attacker, such as knowing when was the last time the machine was rebooted - which is something that occurs likely, for example, to install patches and updates. This might lead adversary to guess whether the system has installed the latest patches and updates, which might provide protection against latest exploits found on the system, or not. However, hiding \textbf{TCP timestamps} is basically \textit{security through obscurity}, which is commonly known to be a bad practice: real protection should be provided by always checking periodically the last updates and patches, and install them.\\
+If needed - but not recommended - mitigation is provided by \textbf{openVAS} itself in the picture below.\\
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{tcpTimestampsVulnMitigation.png}
+  \caption[a]{TCP Timestamps mitigation.}\label{fig:15}
+\end{minipage}%
+\end{figure}
