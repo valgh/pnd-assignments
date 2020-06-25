@@ -1,3 +1,139 @@
 \section{Vulnerability Assessment}
+We are going to provide the results for each host on which the assessment was performed through \textbf{openVAS}, divided by subnet. We are going to adopt the \textbf{Severity Score} provided by \textbf{openVAS} for each of the vulnerabilities - on a scale from 0 to 10, each vulnerability is assigned a value that ranges in \textbf{None, Low, Medium, High} to describe its risk level. These values, along with their \textbf{Quality of Detection} score and the context, are then exploited to prioritize the most severe vulnerabilities in the \textbf{Analysis} subsection,where the vulnerabilities identified are discussed and mitigations are provided.\\
+Every assessment was carried out requiring a minimum \textbf{QoD} of 70$\%$: we need to keep this in mind, since this minimum value, when met, means that the remote detection performed is not fully reliable.\\
+Also, please notice that we are omitting several other information that \textbf{openVas} classified with severity score \textbf{Log} - 0.0. The only purpose of these information is to point out the results of different tests carried out by the tool that do not highlight vulnerabities by themselves, but are useful in the whole process and to us, as analyst, to check how the \textit{discovery, port scan, service detection and OS detection} phases were carried out by \textbf{openVAS}: some examples of these activities may be the execution of the \textbf{traceroute} command, \textbf{OS fingerprinting} operations, the \textbf{Services} log which points out all the services that were detected on the machine, \textbf{SSH} detection with corresponding algorithms to perform \textbf{encryption} and scans to determine which \textbf{cryptographic protocols} are exploited on the machine to perform \textbf{SSL/TLS}.\\
+For each machine, the vulnerabilities to prioritize are highlighted in \textbf{bold}.
+
 \subsection{Results}
+\subsubsection{Internal Servers}
+\textbf{DC machine - 100.100.1.2}
+\begin{itemize}
+\item \textbf{SSL/TLS Missing Secure Cookie Attribute - Severity Score: Medium};
+\item \textbf{Missing httpOnly Cookie Attribute - Severity Score: Medium};
+\item \textbf{SSL/TLS Certificate Signed Using A Weak Signature Algorithm - Severity Score: Medium};
+\item TCP Timestamps - Severity Score: Low;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{dcVulns.png}
+  \caption[a]{Vulnerabilities detected in the DC machine.}\label{fig:3}
+\end{minipage}%
+\end{figure}
+
+\textbf{Log Server Machine - 100.100.1.3}
+\begin{itemize}
+\item TCP Timestamps - Severity Score: Low;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{logServerVulns.png}
+  \caption[a]{Vulnerabilities detected in the Log Server machine.}\label{fig:4}
+\end{minipage}%
+\end{figure}
+
+\textbf{GSM machine - 100.100.1.4}
+\begin{itemize}
+\item SSL/TLS: Untrusted Certificate Authorities - Severity Score: Medium;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{GSM_vulns.png}
+  \caption[a]{Vulnerabilities detected in the GSM machine.}\label{fig:5}
+\end{minipage}%
+\end{figure}
+
+\subsubsection{Firewalls}
+\textbf{Internal Firewall}
+\begin{itemize}
+\item \textbf{Cleartext Transmission of Sensitive Information via HTTP - Severity Score: Medium};
+\item TCP timestamps - Severity Score: Low;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{internalFirewallVulns.png}
+  \caption[a]{Vulnerabilities detected in the Internal Firewall machine.}\label{fig:6}
+\end{minipage}%
+\end{figure}
+
+\textbf{Main Firewall}
+\begin{itemize}
+\item \textbf{Cleartext Transmission of Sensitive Information via HTTP - Severity Score: Medium};
+\item TCP timestamps - Severity Score: Low;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{mainFirewallVulns.png}
+  \caption[a]{Vulnerabilities detected in the Main Firewall machine.}\label{fig:7}
+\end{minipage}%
+\end{figure}
+
+\subsubsection{DMZ}
+\textbf{Web Server Machine - 100.100.6.2}
+\begin{itemize}
+\item TCP timestamps - Severity Score: Low;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{webServerVulns.png}
+  \caption[a]{Vulnerabilities detected in the Web Server machine.}\label{fig:8}
+\end{minipage}%
+\end{figure}
+
+\textbf{Proxy Machine - 100.100.6.3}
+\begin{itemize}
+\item \textbf{SSL/TLS Missing Secure Cookie Attribute - Severity Score: Medium};
+\item \textbf{Missing httpOnly Cookie Attribute - Severity Score: Medium};
+\item \textbf{SSL/TLS Certificate Signed Using A Weak Signature Algorithm - Severity Score: Medium};
+\item TCP Timestamps - Severity Score: Low;
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{proxyVulns.png}
+  \caption[a]{Vulnerabilities detected in the Proxy machine.}\label{fig:9}
+\end{minipage}%
+\end{figure}
+
 \subsection{Analysis}
+
+Obviously, the fact that machines implementing the same services - \textbf{DC} and \textbf{Proxy} with \textbf{Zentyal}, both \textbf{firewalls} with \textbf{OPNSense} - were also diagnosed with the same vulnerabilities, is not simply due to chance. This is an advantage, since when we know how to fix a vulnerability in one of those machines, we also know how to fix it in the other one. We are thus now analyzing one by one the prioritized vulnerabilities - aslo explaining \textit{why} we chose to prioritize them - and then those that are left.\\
+
+\subsubsection{Cleartext Transmission of Sensitive Information via HTTP}
+\begin{itemize}
+\item Severity Score: \textbf{Medium};
+\item Affected Machines: Internal Firewall, Main Firewall (OPNSense);
+\end{itemize}
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{clearTextHTTPfirewallVuln.png}
+  \caption[a]{Password is sent in cleartext through HTTP.}\label{fig:10}
+\end{minipage}%
+\end{figure}
+
+One of the desired features of a Firewall, is that of being immune to penetration. Firewalls are the first devices we should protect in our network, as they filter the traffic that is destined in/out from our subnetworks, and they also implement several other services (DHCP, suricata, OpenVPN...). Not to mention their importance in routing. This vulnerability affects the \textbf{OPNSense} service, and is due to the fact that \textbf{HTTPS} is not enabled.\\
+This is probably the most important vulnerability to mitigate due to its potentially huge negative impact on our network and to the relatively easy fix.\\
+Suggested way to mitigate this is indeed by checking at both firewalls the \textbf{HTTPS} box on option \textbf{Protocol} under \textit{System $->$ Settings $->$ Administration} as pictured in \textbf{Figure 11}: this way, authentication parameters - as well as any other data - should be sent through an encrypted channel. Since an adversary sniffing the devices' traffic might have already exploited this vulnerability, once mitigated it is also recommended to at least change all the passwords for each user in both firewalls.
+
+\begin{figure}[!htb]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\textwidth]{vulnerabilityToMitigate.png}
+  \caption[a]{Suggested fix.}\label{fig:11}
+\end{minipage}%
+\end{figure}

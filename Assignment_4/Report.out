@@ -5,5 +5,9 @@
 \BOOKMARK [1][-]{section.3}{Engaging the Assessment}{}% 5
 \BOOKMARK [1][-]{section.4}{Vulnerability Assessment}{}% 6
 \BOOKMARK [2][-]{subsection.4.1}{Results}{section.4}% 7
-\BOOKMARK [2][-]{subsection.4.2}{Analysis}{section.4}% 8
-\BOOKMARK [1][-]{section.5}{Final Remarks}{}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Internal Servers}{subsection.4.1}% 8
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Firewalls}{subsection.4.1}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.3}{DMZ}{subsection.4.1}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Analysis}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Cleartext Transmission of Sensitive Information via HTTP}{subsection.4.2}% 12
+\BOOKMARK [1][-]{section.5}{Final Remarks}{}% 13
