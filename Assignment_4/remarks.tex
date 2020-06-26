@@ -1,1 +1,9 @@
-\section{Final Remarks}
+\section{Vulnerability Assessment: Final Remarks}
+We highlighted the vulnerabilities that we deemed to be more dangerous - i.e., the ones that need to be prioritized according to our evaluation. Nonetheless, please notice that we were able to detect them because some of the services - e.g. firewalls and IPS - were disabled.\\
+Furthermore, some of the prioritized vulnerabilities affecting the machines running the \textbf{Zentyal} service - \textit{secure and httpOnly} flags set for the cookies - might not have an easy fix or mitigation available without either upgrading the service to the commercial version or updating the service itself so that the vendor help is required, meaning that there may be no other choice than to accept them. Because of this, it might be a good idea to deal with the \textbf{TCP Timestamps} vulnerability instead, because a well-known mitigation is available and already provided by the \textbf{openVAS} tool, and even if its \textbf{Severity Score} is actually \textbf{Low}, its risk level may be actually higher since it basically affects all the machines in the two target subnetworks and firewalls.\\
+However, some testing should be performed first to actually evaluate whether these timestamps can actually be exploited to guess the uptime of the machines, then in order to evaluate the performance after disabling the timestamps, and again check whether by disabling them no further vulnerabilities are introduced in the hosts. To this end, we provide some other articles as references which migh be starting points to deepen the problem.
+\begin{itemize}
+\item \url{https://www.whonix.org/wiki/Disable_TCP_and_ICMP_Timestamps}
+\item \url{https://cloudshark.io/articles/tcp-timestamp-option/}
+\item \url{https://hackinparis.com/data/slides/2015/veit_hailperin_still_exploiting_tcp_timestamps.pdf}
+\end{itemize}
